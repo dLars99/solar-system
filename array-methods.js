@@ -2,9 +2,9 @@ const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uran
 
 // Master display list to fulfill the first requirement below, and to display subsequent requirements
 
-const displayList = (list) => {
+const displayList = (list, sectionID) => {
     list.forEach(planet => {
-        document.querySelector("#planets").innerHTML += `<p>${planet}</p>`
+        document.querySelector("#" + sectionID).innerHTML += `<p>${planet}</p>`
     })
 }
 
@@ -14,9 +14,9 @@ const displayList = (list) => {
     Use string templates to construct the DOM elements.
 */
 
-displayList(planets)
-
 const planetEl = document.getElementById("planets")
+
+displayList(planets, "planets")
 
 /*
     Use the map method to create a new array where the
@@ -26,6 +26,13 @@ const planetEl = document.getElementById("planets")
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 */
 
+const capitalPlanets = planets.map(planet => {
+    return planet.charAt(0).toUpperCase() + planet.slice(1)
+})
+
+const capitalEl = document.getElementById("capitalized")
+
+displayList(capitalPlanets, "capitalized")
 
 /*
     Use the filter method to create a new array that
@@ -34,3 +41,11 @@ const planetEl = document.getElementById("planets")
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
+
+// const ePlanets = planets.map(planet => {
+//     return planet.charAt(0).toUpperCase() + planet.slice(1)
+// })
+
+// const capitalEl = document.getElementById("letterE")
+
+// displayList(ePlanets, "letterE")
