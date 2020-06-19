@@ -1,15 +1,21 @@
 const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
 
+// Master display list to fulfill the first requirement below, and to display subsequent requirements
+
 const displayList = (list) => {
     list.forEach(planet => {
-        
+        document.querySelector("#planets").innerHTML += `<p>${planet}</p>`
     })
 }
+
 /*
     Use the forEach method to add the name of each planet
     to a section element in your HTML with an id of "planets".
     Use string templates to construct the DOM elements.
 */
+
+displayList(planets)
+
 const planetEl = document.getElementById("planets")
 
 /*
