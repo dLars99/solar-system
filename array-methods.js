@@ -27,7 +27,7 @@ displayList(planets, "planets")
 */
 
 const capitalPlanets = planets.map(planet => {
-    planet.charAt(0).toUpperCase() + planet.slice(1)
+    return planet.charAt(0).toUpperCase() + planet.slice(1)
 })
 
 const capitalEl = document.getElementById("capitalized")
@@ -41,3 +41,11 @@ displayList(capitalPlanets, "capitalized")
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
+
+// const ePlanets = planets.map(planet => {
+//     return planet.charAt(0).toUpperCase() + planet.slice(1)
+// })
+
+// const capitalEl = document.getElementById("letterE")
+
+// displayList(ePlanets, "letterE")
