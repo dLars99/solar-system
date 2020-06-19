@@ -14,8 +14,6 @@ const displayList = (list, sectionID) => {
     Use string templates to construct the DOM elements.
 */
 
-const planetEl = document.getElementById("planets")
-
 displayList(planets, "planets")
 
 /*
@@ -30,7 +28,6 @@ const capitalPlanets = planets.map(planet => {
     return planet.charAt(0).toUpperCase() + planet.slice(1)
 })
 
-const capitalEl = document.getElementById("capitalized")
 
 displayList(capitalPlanets, "capitalized")
 
@@ -42,10 +39,8 @@ displayList(capitalPlanets, "capitalized")
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
 
-// const ePlanets = planets.map(planet => {
-//     return planet.charAt(0).toUpperCase() + planet.slice(1)
-// })
+const ePlanets = planets.filter(planet => {
+    return planet.includes("e")
+})
 
-// const capitalEl = document.getElementById("letterE")
-
-// displayList(ePlanets, "letterE")
+displayList(ePlanets, "letterE")
